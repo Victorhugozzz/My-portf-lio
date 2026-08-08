@@ -1,0 +1,31 @@
+@keyframes ambient-float {
+  50% {
+    transform: translate3d(0, -12px, 0);
+  }
+}
+
+@keyframes soft-pulse {
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.hero-visual::before,
+.product-orb::before {
+  animation: ambient-float 7s ease-in-out infinite;
+}
+
+.hero::after {
+  animation: soft-pulse 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
