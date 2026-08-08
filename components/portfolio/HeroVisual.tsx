@@ -1,4 +1,10 @@
-export function HeroVisual() {
+import Image from "next/image";
+
+interface HeroVisualProps {
+  readonly portraitImage?: string | null;
+}
+
+export function HeroVisual({ portraitImage = null }: HeroVisualProps) {
   return (
     <div aria-label="Composição visual de desenvolvimento" className="hero-visual" role="img">
       <div aria-hidden="true" className="hero-visual__grid" />
@@ -25,13 +31,25 @@ export function HeroVisual() {
         </pre>
       </div>
 
-      <div className="hero-visual__core">
-        <span className="hero-visual__core-ring hero-visual__core-ring--one" />
-        <span className="hero-visual__core-ring hero-visual__core-ring--two" />
-        <div className="hero-visual__monogram">V.</div>
-        <p>building</p>
-        <span>products</span>
-      </div>
+      {portraitImage ? (
+        <div className="hero-visual__portrait">
+          <Image
+            alt="Retrato de Victor"
+            fill
+            priority
+            sizes="(max-width: 580px) 50vw, 18rem"
+            src={portraitImage}
+          />
+        </div>
+      ) : (
+        <div className="hero-visual__core">
+          <span className="hero-visual__core-ring hero-visual__core-ring--one" />
+          <span className="hero-visual__core-ring hero-visual__core-ring--two" />
+          <div className="hero-visual__monogram">V.</div>
+          <p>building</p>
+          <span>products</span>
+        </div>
+      )}
 
       <div className="hero-visual__note hero-visual__note--top">
         <span className="note-dot" />

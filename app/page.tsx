@@ -99,7 +99,7 @@ export default function Home() {
                 <SocialLinks compact />
               </div>
             </div>
-            <HeroVisual />
+            <HeroVisual portraitImage={profile.portraitImage} />
           </div>
           <div aria-hidden="true" className="hero__scroll">
             <span>explore</span><i />

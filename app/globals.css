@@ -635,6 +635,23 @@ li {
   text-align: center;
 }
 
+.hero-visual__portrait {
+  position: relative;
+  z-index: 2;
+  width: min(57%, 17rem);
+  aspect-ratio: 0.84;
+  overflow: hidden;
+  border: 1px solid rgba(167, 139, 250, 0.52);
+  border-radius: 8.5rem 8.5rem 2rem 2rem;
+  background: var(--background-secondary);
+  box-shadow: 0 0 0 1.15rem rgba(11, 16, 32, 0.72), 0 0 0 1.22rem rgba(148, 163, 184, 0.09), 0 0 6rem rgba(37, 99, 235, 0.25);
+}
+
+.hero-visual__portrait img {
+  object-fit: cover;
+  object-position: center top;
+}
+
 .hero-visual__core-ring {
   position: absolute;
   border: 1px dashed rgba(56, 189, 248, 0.43);

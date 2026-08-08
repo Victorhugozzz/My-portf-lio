@@ -27,6 +27,11 @@ export interface ProfileData {
   readonly name: string;
   readonly brand: string;
   readonly role: string;
+  /**
+   * Add a portrait under the public folder and set its public path here when
+   * ready, for example: "/victor-profile.jpg".
+   */
+  readonly portraitImage: string | null;
   readonly hero: {
     readonly greeting: string;
     readonly title: string;
@@ -91,6 +96,7 @@ export const profile: ProfileData = {
   name: "Victor",
   brand: "Victor.dev",
   role: "Desenvolvedor em evolução",
+  portraitImage: null,
   hero: {
     greeting: "Olá, eu sou Victor.",
     title: "Desenvolvo sistemas, APIs e produtos digitais.",
